@@ -24,15 +24,11 @@ namespace DataAccess.Models
         [Column(TypeName = "VARCHAR(50)")]
         public string Name { get; set; }
 
-        [DefaultValue(0)]
         public int? Age { get; set; }
-
-
-        [DefaultValue(0)]
+                
         public int? Weight { get; set; }
       
-        [Column(TypeName = "VARCHAR(500)")]
-        [DefaultValue("Unknown")]
+        [Column(TypeName = "VARCHAR(500)")]        
         public string? History { get; set; }
 
         [Required]

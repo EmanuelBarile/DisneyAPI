@@ -21,3 +21,26 @@ C:\Users\Windows11\source\repos\CursoNET\DisneyAPI\Services\obj\Debug\net6.0\ref
 C:\Users\Windows11\source\repos\CursoNET\DisneyAPI\Services\obj\Debug\net6.0\Services.pdb
 C:\Users\Windows11\source\repos\CursoNET\DisneyAPI\Services\obj\Debug\net6.0\Services.genruntimeconfig.cache
 C:\Users\Windows11\source\repos\CursoNET\DisneyAPI\Services\obj\Debug\net6.0\ref\Services.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Services.deps.json
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Services.runtimeconfig.json
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Services.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Services.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Common.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Contracts.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Repositories.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Common.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Contracts.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\Repositories.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\refint\Services.dll
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.pdb
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\Services.genruntimeconfig.cache
+C:\Users\Lucho\Desktop\Proyectos\Disney API\DisneyAPI\Services\obj\Debug\net6.0\ref\Services.dll
