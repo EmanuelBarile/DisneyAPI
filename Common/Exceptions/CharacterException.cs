@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common.Exceptions
 {
-    public class CharacterException
+    public class CharacterException :Exception
     {
+        public CharacterException(string mensaje) : base(mensaje)
+        {
+
+        }
     }
 }

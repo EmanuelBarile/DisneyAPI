@@ -79,6 +79,10 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(25)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id_Genre");
 
                     b.ToTable("Genres");

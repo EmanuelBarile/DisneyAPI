@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common.Exceptions
 {
-    public class MovieExceptions
+    public class MovieExceptions : Exception
     {
+        public MovieExceptions(string mensaje) : base(mensaje)
+        {
+
+        }
     }
 }

@@ -2013,23 +2013,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lucho\\.nuget\\packages\\": {},
+    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Common\\Common.csproj",
+      "projectUniqueName": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Common\\Common.csproj",
-      "packagesPath": "C:\\Users\\Lucho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Common\\obj\\",
+      "projectPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Common\\Common.csproj",
+      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

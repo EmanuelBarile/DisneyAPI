@@ -14,11 +14,14 @@ namespace DataAccess.Models
         public int Id_Genre { get; set; }
 
         [Required]
+        public string Name { get; set; }
+
+        [Required]
         [Column(TypeName = "VARCHAR(25)")]
         public string Image_Genre { get; set; }
 
         [Required]
-        public List<Movie> Movies { get;}
+        public List<Movie> Movies { get; set; }
 
 
     }

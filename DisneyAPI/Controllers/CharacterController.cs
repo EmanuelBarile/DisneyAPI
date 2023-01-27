@@ -1,4 +1,6 @@
-﻿using DataAccess;
+﻿using Common.DTO;
+using Contracts.Repositories;
+using DataAccess;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,20 +12,18 @@ namespace DisneyAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-
+        
         private readonly DisneyContext _context;
 
         public CharacterController(DisneyContext context)
         {
             _context = context;
         }
+        
 
-        // GET: API/Characters
-        [HttpGet("CharactersList")]
-        public async Task<ActionResult<IEnumerable<Character>>> GetCharacters()
-        {
-            return await _context.Characters.ToListAsync();
-        }
+
+
+    
 
 
     }

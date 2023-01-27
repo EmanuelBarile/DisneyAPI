@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Common.Exceptions
 {
-    public class GenreExceptions
+    public class GenreExceptions : Exception
     {
+        public GenreExceptions(string mensaje) : base(mensaje)
+        {
+
+        }
     }
 }
