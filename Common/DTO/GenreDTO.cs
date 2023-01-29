@@ -17,8 +17,7 @@ namespace Common.DTO
 
         [Required]
         public string Name { get; set; }
-
-        [Required]
+                
         public List<MovieDTO> Movies { get; set; }
     }
 }

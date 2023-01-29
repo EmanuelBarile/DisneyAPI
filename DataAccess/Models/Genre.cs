@@ -19,8 +19,7 @@ namespace DataAccess.Models
         [Required]
         [Column(TypeName = "VARCHAR(25)")]
         public string Image_Genre { get; set; }
-
-        [Required]
+               
         public List<Movie> Movies { get; set; }
 
 

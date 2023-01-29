@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(DisneyContext))]
-    [Migration("20230124025352_Initial Commit")]
+    [Migration("20230129203811_Initial Commit")]
     partial class InitialCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,21 +23,6 @@ namespace DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("CharacterMovie", b =>
-                {
-                    b.Property<int>("CharactersId_Character")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MoviesId_Movie")
-                        .HasColumnType("int");
-
-                    b.HasKey("CharactersId_Character", "MoviesId_Movie");
-
-                    b.HasIndex("MoviesId_Movie");
-
-                    b.ToTable("CharacterMovie");
-                });
 
             modelBuilder.Entity("DataAccess.Models.Character", b =>
                 {
@@ -69,6 +54,21 @@ namespace DataAccess.Migrations
                     b.ToTable("Characters");
                 });
 
+            modelBuilder.Entity("DataAccess.Models.CharacterMovie", b =>
+                {
+                    b.Property<int>("Id_Character")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id_Movie")
+                        .HasColumnType("int");
+
+                    b.HasIndex("Id_Character");
+
+                    b.HasIndex("Id_Movie");
+
+                    b.ToTable("CharacterMovies");
+                });
+
             modelBuilder.Entity("DataAccess.Models.Genre", b =>
                 {
                     b.Property<int>("Id_Genre")
@@ -80,6 +80,10 @@ namespace DataAccess.Migrations
                     b.Property<string>("Image_Genre")
                         .IsRequired()
                         .HasColumnType("VARCHAR(25)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_Genre");
 
@@ -118,19 +122,23 @@ namespace DataAccess.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("CharacterMovie", b =>
+            modelBuilder.Entity("DataAccess.Models.CharacterMovie", b =>
                 {
-                    b.HasOne("DataAccess.Models.Character", null)
+                    b.HasOne("DataAccess.Models.Character", "Character")
                         .WithMany()
-                        .HasForeignKey("CharactersId_Character")
+                        .HasForeignKey("Id_Character")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DataAccess.Models.Movie", null)
+                    b.HasOne("DataAccess.Models.Movie", "Movie")
                         .WithMany()
-                        .HasForeignKey("MoviesId_Movie")
+                        .HasForeignKey("Id_Movie")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Character");
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Movie", b =>

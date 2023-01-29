@@ -12,6 +12,9 @@ namespace Common.DTO
 {
     public class MovieDTO
     {
+
+        public int Id_Movie { get; set; }
+
         [Required]
         [Column(TypeName = "VARCHAR(50)")]
         public string Image_Movie { get; set; }
@@ -30,11 +33,6 @@ namespace Common.DTO
  
         [ForeignKey("Genre")]
         [Required]
-        public int Genre_Id { get; set; }
-
-        [Required]
-        public List<CharacterDTO> Characters { get; set; }
-
-
+        public int Genre_Id { get; set; }   
     }
 }

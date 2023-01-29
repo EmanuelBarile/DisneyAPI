@@ -11,6 +11,8 @@ namespace Common.DTO
 {
     public class CharacterDTO
     {
+        public int Id_Character { get; set; }
+
         [Required]
         [Column(TypeName = "VARCHAR(50)")]
         public string Image_Character { get; set; }
@@ -24,9 +26,7 @@ namespace Common.DTO
         public int? Weight { get; set; }
 
         [Column(TypeName = "VARCHAR(500)")]
-        public string? History { get; set; }
-
-        [Required]
-        public List<MovieDTO> Movies { get; set; }
+        public string? History { get; set; }  
+        
     }
 }

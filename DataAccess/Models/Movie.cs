@@ -26,17 +26,13 @@ namespace DataAccess.Models
         public DateTime Creation_Date { get; set; }
 
         [Required]
-        public int Rating { get; set; }
-
-        [Required]
-        public List<Character> Characters { get; set;}
+        public int Rating { get; set; }        
 
         [ForeignKey("Genre")]
         [Required]
         public int Genre_Id { get; set; }
 
         public Genre Genre { get; set; }
-
     }
 }
 

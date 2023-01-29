@@ -9,7 +9,7 @@ namespace Contracts.Repositories
 {
     public interface IGenreRepository
     {
-        GenreDTO  GetAllMoviesByGenre(string name);
+        GenreDTO GetAllMoviesByGenre(string name);
         void AddGenre(GenreDTO genreDTO);
         void DeleteGenre(GenreDTO genreDTO);
         void ModifyGenre(GenreDTO genreDTO);

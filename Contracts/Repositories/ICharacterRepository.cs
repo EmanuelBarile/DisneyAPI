@@ -10,7 +10,7 @@ namespace Contracts.Repositories
     public interface ICharacterRepository
     {
         IList<CharacterDTO> GetAllCharacters();
-
+        CharacterDTO GetMoviesByCharacter(string name);
         CharacterDTO GetCharacterByName (string name);
         void AddCharacter(CharacterDTO characterDTO);
         void DeleteCharacter(CharacterDTO characterDTO);

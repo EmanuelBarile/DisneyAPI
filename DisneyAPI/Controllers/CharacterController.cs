@@ -1,5 +1,6 @@
 ﻿using Common.DTO;
 using Contracts.Repositories;
+using Contracts.Service;
 using DataAccess;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Http;
@@ -12,18 +13,18 @@ namespace DisneyAPI.Controllers
     [ApiController]
     public class CharacterController : ControllerBase
     {
-        
-        private readonly DisneyContext _context;
 
-        public CharacterController(DisneyContext context)
+        private readonly ICharacterService _characterService;
+
+        public CharacterController(ICharacterService characterService)
         {
-            _context = context;
+            _characterService = characterService;
         }
+
         
 
 
 
-    
 
 
     }

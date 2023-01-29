@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Common.Exceptions
 {
-    public class CharacterException :Exception
+    public class CharacterExceptions : Exception
     {
-        public CharacterException(string mensaje) : base(mensaje)
+        public CharacterExceptions(string mensaje) : base(mensaje)
         {
 
         }

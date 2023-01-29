@@ -10337,23 +10337,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Windows11\\.nuget\\packages\\": {},
+    "C:\\Users\\Lucho\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\DisneyAPI\\DisneyAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\DisneyAPI\\DisneyAPI.csproj",
       "projectName": "DisneyAPI",
-      "projectPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\DisneyAPI\\DisneyAPI.csproj",
-      "packagesPath": "C:\\Users\\Windows11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\DisneyAPI\\obj\\",
+      "projectPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\DisneyAPI\\DisneyAPI.csproj",
+      "packagesPath": "C:\\Users\\Lucho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\DisneyAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Windows11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10369,14 +10369,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Common\\Common.csproj"
+            "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Common\\Common.csproj"
             },
-            "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Contracts\\Contracts.csproj": {
-              "projectPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Contracts\\Contracts.csproj"
+            "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Contracts\\Contracts.csproj"
             },
-            "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Windows11\\source\\repos\\CursoNET\\DisneyAPI\\Services\\Services.csproj"
+            "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\Lucho\\Desktop\\Proyectos\\Disney API\\DisneyAPI\\Services\\Services.csproj"
             }
           }
         }

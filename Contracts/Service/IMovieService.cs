@@ -9,19 +9,13 @@ namespace Contracts.Service
 {
     public interface IMovieService
     {
+
         ResponseDTO GetAllMovies();
-
-        ResponseDTO GetMoviesByGenre(int id);
-
-        ResponseDTO GetMoviesByCharacter(int id);
-
-        ResponseDTO GetMoviesByName(string name);
-
-        ResponseDTO AddMovie(MovieDTO movieDTO);
-
+        ResponseDTO GetMovieByName(string title);
+        ResponseDTO GetMoviesFilterByName(string title);        
+        ResponseDTO AddMovie(MovieDTO movieDTO, List<CharacterDTO> characters);
         ResponseDTO DeleteMovie(MovieDTO movieDTO);
-
-        ResponseDTO ModifyMovie(MovieDTO movieDTO);
-
+        ResponseDTO ModifyMovie(MovieDTO movieDTO);        
+        
     }
 }

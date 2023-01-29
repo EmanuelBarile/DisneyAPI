@@ -3,8 +3,11 @@ using Common.Exceptions;
 using Contracts.Repositories;
 using DataAccess;
 using DataAccess.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +26,10 @@ namespace Repositories
         {
             return _context.Movies.Where(x => x.Id_Movie != null).Select(x => new MovieDTO()
             {
+                
                 Image_Movie = x.Image_Movie,
                 Title = x.Title,
+                /* REALIZAR LOGICA DESDE TABLA INTERMEDIA
                 Characters = _context.Characters.Select(c => new CharacterDTO
                 {
 
@@ -34,31 +39,32 @@ namespace Repositories
                     Weight = c.Weight,
                     History = c.History,
                 }).ToList()
-
+                */
             }).ToList();
         }
 
         public MovieDTO GetMovieByName(string title)
         {
+
             if (_context.Movies.Any(x => x.Title != title))
             {
-                throw new CharacterException("The title doesn´t exists.");
+                throw new MovieExceptions("The title doesn´t exists.");
             }
             var movie = _context.Movies.Find(title);
             return new MovieDTO()
             {
                 Image_Movie = movie.Image_Movie,
-                Title= movie.Title
-                
+                Title = movie.Title                
             };
+
         }
 
-
-        public IList<MovieDTO> GetMoviesFilterByName(string title) //nombre tentativo
+        public IList<MovieDTO> GetMoviesFilterByName(string title)
         {
+
             if (_context.Movies.Any(x => x.Title != title))
             {
-                throw new CharacterException("The title doesn´t exists.");
+                throw new MovieExceptions("The title doesn´t exists.");
             }
             var movies = _context.Movies.Where(m => m.Title.Contains(title)).Select(m => new MovieDTO()
             {
@@ -66,37 +72,61 @@ namespace Repositories
                 Title = m.Title
             }).ToList();
             return movies;
+
         }
 
-
-
-
-        public void AddMovie(MovieDTO movieDTO)
+        public void AddMovie(MovieDTO movieDTO, List<CharacterDTO> characters)
         {
 
-            if (_context.Movies.Any(x => x.Title == movieDTO.Title))
+            // Verificar si la pelicula ya existe
+            var existePelicula = _context.Movies
+                .Any(x => x.Id_Movie == movieDTO.Id_Movie);
+            if (!existePelicula)
             {
-                throw new CharacterException("The name is already taken.");
+                // Agregar pelicula a la tabla
+                _context.Movies.Add(new DataAccess.Models.Movie
+                {
+                    Image_Movie = movieDTO.Image_Movie,
+                    Title = movieDTO.Title,
+                    Creation_Date = movieDTO.Creation_Date,
+                    Rating = movieDTO.Rating,
+                    Genre_Id = movieDTO.Genre_Id                    
+                });
+                _context.SaveChanges();
             }
-            _context.Movies.Add(new DataAccess.Models.Movie()
+
+            // Verificar si los personajes ya existen
+            foreach (var character in characters)
             {
-                Image_Movie = movieDTO.Image_Movie,
-                Title = movieDTO.Title,
-                Creation_Date = movieDTO.Creation_Date,
-                Rating = movieDTO.Rating,
-                Genre_Id = movieDTO.Genre_Id
+                var existePersonaje = _context.Characters
+                    .Any(x => x.Id_Character == character.Id_Character);
+                if (!existePersonaje)
+                {
+                    // Agregar personaje a la tabla
+                    _context.Characters.Add(new DataAccess.Models.Character
+                    {
+                        Image_Character = character.Image_Character,
+                        Name = character.Name,
+                        Age = character.Age,
+                        Weight = character.Weight,
+                        History = character.History
+                    });
+                }
 
-            });
-
-
+                // Agregar relacion a la tabla intermedia
+                _context.CharacterMovies.Add(new DataAccess.Models.CharacterMovie
+                {
+                    Id_Character = character.Id_Character,
+                    Id_Movie = movieDTO.Id_Movie
+                });
+            }
         }
-
 
         public void DeleteMovie(MovieDTO movieDTO)
         {
 
             var deleteMovie = _context.Movies.FirstOrDefault(x => x.Title == movieDTO.Title)
-                ?? throw new CharacterException("Name of character does not exist.");
+                ?? throw new MovieExceptions("Name of character does not exist.");
 
 
             _context.Movies.Remove(deleteMovie);
@@ -107,7 +137,7 @@ namespace Repositories
         {
 
             var modifyMovie = _context.Movies.FirstOrDefault(x => x.Title == movieDTO.Title)
-                ?? throw new CharacterException("Name of character does not exist.");
+                ?? throw new MovieExceptions("Name of character does not exist.");
 
             modifyMovie.Title = movieDTO.Title;
             modifyMovie.Image_Movie = movieDTO.Image_Movie;
@@ -116,9 +146,7 @@ namespace Repositories
             modifyMovie.Genre_Id = movieDTO.Genre_Id;
 
             _context.Movies.Update(modifyMovie);
-
         }
-
     }
 }
 

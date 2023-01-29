@@ -22,21 +22,6 @@ namespace DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CharacterMovie", b =>
-                {
-                    b.Property<int>("CharactersId_Character")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MoviesId_Movie")
-                        .HasColumnType("int");
-
-                    b.HasKey("CharactersId_Character", "MoviesId_Movie");
-
-                    b.HasIndex("MoviesId_Movie");
-
-                    b.ToTable("CharacterMovie");
-                });
-
             modelBuilder.Entity("DataAccess.Models.Character", b =>
                 {
                     b.Property<int>("Id_Character")
@@ -65,6 +50,21 @@ namespace DataAccess.Migrations
                     b.HasKey("Id_Character");
 
                     b.ToTable("Characters");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.CharacterMovie", b =>
+                {
+                    b.Property<int>("Id_Character")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id_Movie")
+                        .HasColumnType("int");
+
+                    b.HasIndex("Id_Character");
+
+                    b.HasIndex("Id_Movie");
+
+                    b.ToTable("CharacterMovies");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Genre", b =>
@@ -120,19 +120,23 @@ namespace DataAccess.Migrations
                     b.ToTable("Movies");
                 });
 
-            modelBuilder.Entity("CharacterMovie", b =>
+            modelBuilder.Entity("DataAccess.Models.CharacterMovie", b =>
                 {
-                    b.HasOne("DataAccess.Models.Character", null)
+                    b.HasOne("DataAccess.Models.Character", "Character")
                         .WithMany()
-                        .HasForeignKey("CharactersId_Character")
+                        .HasForeignKey("Id_Character")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DataAccess.Models.Movie", null)
+                    b.HasOne("DataAccess.Models.Movie", "Movie")
                         .WithMany()
-                        .HasForeignKey("MoviesId_Movie")
+                        .HasForeignKey("Id_Movie")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Character");
+
+                    b.Navigation("Movie");
                 });
 
             modelBuilder.Entity("DataAccess.Models.Movie", b =>

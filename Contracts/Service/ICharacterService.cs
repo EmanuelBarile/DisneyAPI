@@ -10,12 +10,11 @@ namespace Contracts.Service
     public interface ICharacterService
     {
         ResponseDTO GetAllCharacters();
-
-        ResponseDTO GetAllMoviesByCharacterId(int id);
+        ResponseDTO GetMoviesByCharacter(string name);
         ResponseDTO GetCharacterByName(string name);
         ResponseDTO AddCharacter(CharacterDTO characterDTO);
         ResponseDTO DeleteCharacter(CharacterDTO characterDTO);
         ResponseDTO ModifyCharacter(CharacterDTO characterDTO);
 
-    }
+    }    
 }

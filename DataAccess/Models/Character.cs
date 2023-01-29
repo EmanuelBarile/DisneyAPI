@@ -29,10 +29,7 @@ namespace DataAccess.Models
         public int? Weight { get; set; }
       
         [Column(TypeName = "VARCHAR(500)")]        
-        public string? History { get; set; }
-
-        [Required]
-        public List<Movie> Movies { get; set;}
+        public string? History { get; set; }        
 
     }
 }

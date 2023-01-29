@@ -32,6 +32,7 @@ namespace DataAccess.Migrations
                 {
                     Id_Genre = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image_Genre = table.Column<string>(type: "VARCHAR(25)", nullable: false)
                 },
                 constraints: table =>
@@ -63,33 +64,37 @@ namespace DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CharacterMovie",
+                name: "CharacterMovies",
                 columns: table => new
                 {
-                    CharactersId_Character = table.Column<int>(type: "int", nullable: false),
-                    MoviesId_Movie = table.Column<int>(type: "int", nullable: false)
+                    Id_Character = table.Column<int>(type: "int", nullable: false),
+                    Id_Movie = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CharacterMovie", x => new { x.CharactersId_Character, x.MoviesId_Movie });
                     table.ForeignKey(
-                        name: "FK_CharacterMovie_Characters_CharactersId_Character",
-                        column: x => x.CharactersId_Character,
+                        name: "FK_CharacterMovies_Characters_Id_Character",
+                        column: x => x.Id_Character,
                         principalTable: "Characters",
                         principalColumn: "Id_Character",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CharacterMovie_Movies_MoviesId_Movie",
-                        column: x => x.MoviesId_Movie,
+                        name: "FK_CharacterMovies_Movies_Id_Movie",
+                        column: x => x.Id_Movie,
                         principalTable: "Movies",
                         principalColumn: "Id_Movie",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CharacterMovie_MoviesId_Movie",
-                table: "CharacterMovie",
-                column: "MoviesId_Movie");
+                name: "IX_CharacterMovies_Id_Character",
+                table: "CharacterMovies",
+                column: "Id_Character");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CharacterMovies_Id_Movie",
+                table: "CharacterMovies",
+                column: "Id_Movie");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_Genre_Id",
@@ -100,7 +105,7 @@ namespace DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CharacterMovie");
+                name: "CharacterMovies");
 
             migrationBuilder.DropTable(
                 name: "Characters");

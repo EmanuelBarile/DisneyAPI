@@ -1,6 +1,9 @@
-﻿using DataAccess;
+﻿using Common.DTO;
+using Contracts.Service;
+using DataAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Services;
 
 namespace DisneyAPI.Controllers
 {
@@ -8,14 +11,18 @@ namespace DisneyAPI.Controllers
     [ApiController]
     public class GenreController : ControllerBase
     {
-       
-        private readonly DisneyContext _context;
 
-        public GenreController(DisneyContext context)
+        private readonly IGenreService _genreService;
+
+        public GenreController(IGenreService genreService)
         {
-            _context = context;
+            _genreService = genreService;
         }
 
-
+        [HttpPost("AddGenre")]
+        public ResponseDTO AddGenre([FromQuery] GenreDTO newGenre)
+        {
+            return _genreService.AddGenre(newGenre);
+        }
     }
 }

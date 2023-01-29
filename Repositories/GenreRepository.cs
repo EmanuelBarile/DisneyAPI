@@ -13,16 +13,16 @@ namespace Repositories
     public class GenreRepository : IGenreRepository
     {
         private DisneyContext _context { get; set; }
-
         public GenreRepository(DisneyContext context)
         {
             _context = context;
         }
+
         public GenreDTO GetAllMoviesByGenre(string name)
         {
             if (_context.Genres.Any(x => x.Name != name))
             {
-                throw new CharacterException("The genre doesn´t exists.");
+                throw new GenreExceptions("The genre doesn´t exists.");
             }
             var genre = _context.Genres.Find(name);
             return new GenreDTO()
@@ -39,22 +39,18 @@ namespace Repositories
 
                 }).ToList()
             };
-
-
         }
-
 
         public void AddGenre(GenreDTO genreDTO)
         {
             if (_context.Genres.Any(x => x.Name == genreDTO.Name))
             {
-                throw new CharacterException("The name is already taken.");
+                throw new GenreExceptions("The name is already taken.");
             }
             _context.Genres.Add(new DataAccess.Models.Genre()
             {
                 Image_Genre = genreDTO.Image_Genre,
                 Name = genreDTO.Name
-
             });
         }
 
@@ -62,25 +58,21 @@ namespace Repositories
         {
 
             var deleteGenre = _context.Genres.FirstOrDefault(x => x.Name == genreDTO.Name)
-                ?? throw new CharacterException("Gender does not exist.");
-
+                ?? throw new GenreExceptions("Gender does not exist.");
 
             _context.Genres.Remove(deleteGenre);
+
         }
-
-
 
         public void ModifyGenre(GenreDTO genreDTO)
         {
             var modifyGenre = _context.Genres.FirstOrDefault(x => x.Name == genreDTO.Name)
-                ?? throw new CharacterException("Gender does not exist.");
+                ?? throw new GenreExceptions("Gender does not exist.");
 
             modifyGenre.Name = genreDTO.Name;
             modifyGenre.Image_Genre = genreDTO.Image_Genre;
 
             _context.Genres.Update(modifyGenre);
         }
-
-
     }
 }
